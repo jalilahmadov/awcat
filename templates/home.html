@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx" class="no-js">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="shortcut icon" href="img/fav.png">
@@ -26,7 +26,7 @@
 			<div class="container main-menu">
 				<div class="row align-items-center justify-content-between d-flex">
 					<div id="logo">
-						<a href="{% url 'news:home' %}"><img src="/static/img/logo.jpeg" width="60px;" alt="" title="" /></a>
+						<a href="{% url 'news:home' %}"><img src="/static/img/logo.jpeg" width="60px;" alt="logo" title="" /></a>
 					</div>
 					<nav id="nav-menu-container">
 						<ul class="nav-menu">
@@ -64,9 +64,9 @@
 		<section class="top-category-widget-area pt-90 pb-90 ">
 			
 			<div class="container">
-					<label class="switchSmall m5">
+					<label for="theme" class="switchSmall m5">
 							<p>Switch Theme</p>
-						<input id="theme" type="checkbox">
+						<input  id="theme" type="checkbox">
 						<small></small>
 						</label>			
 				<div class="row">		
@@ -162,8 +162,9 @@
                         <div class="widget-wrap">
                             <div class="single-sidebar-widget search-widget">
                                 <form class="search-form" action="#">
-                                    <input placeholder="Search Posts" name="search" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Posts'" >
-                                    <button type="submit"><i class="fa fa-search"></i></button>
+									<label for="search">Search</label>
+                                    <input id="search" placeholder="Search Posts" name="search" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Posts'" >
+                                    <button type="submit"><strong class="fa fa-search"></strong></button>
                                 </form>
                             </div>
                             <div class="single-sidebar-widget user-info-widget">
@@ -173,10 +174,10 @@
                                     Junior Android and Web Developer
                                 </p>
                                 <ul class="social-links">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-github"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                    <li><a href="#"><strong class="fa fa-facebook"></strong></a></li>
+                                    <li><a href="#"><strong class="fa fa-twitter"></strong></a></li>
+                                    <li><a href="#"><strong class="fa fa-github"></strong></a></li>
+                                    <li><a href="#"><strong class="fa fa-behance"></strong></a></li>
                                 </ul>
                                 <p>
                                     Courteous and enthusiastic, I am interested in IT and everything in its orbit. I recently began to be fascinated by web programming, e.g. developing apps and building websites. Invited to join my friend's start-up company as a front-end developer, I gained experience of working in this area. 
@@ -243,8 +244,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Jalil
                             <h4>Follow Me</h4>
                             <p>Let us be social</p>
                             <div class="footer-social d-flex align-items-center">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
+									<a href="https://www.facebook.com/profile.php?id=100006320358619" target="_blank"><strong class="fa fa-facebook"></strong></a>
+                                    <a href="https://twitter.com/AhmadovJalil?s=08" target="_blank"><strong class="fa fa-twitter"></strong></a>
                            
                             </div>
                         </div>

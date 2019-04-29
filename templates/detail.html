@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx" class="no-js">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
 <head>
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -58,7 +58,7 @@
         <section class="post-content-area single-post-area">
             
             <div class="container">
-                    <label class="switchSmall m5">
+                    <label for="theme" class="switchSmall m5">
 							<p>Switch Theme</p>
 						<input id="theme" type="checkbox">
 						<small></small>
@@ -84,10 +84,10 @@
                                     <p class="view vw col-lg-12 col-md-12 col-6"><a id="th2" href="#">{{post.views}}</a> <span class="lnr lnr-eye"></span></p>
                                     <p class="comments cm col-lg-12 col-md-12 col-6"><a id="th3" href="#">{{comments_count.count}} Comments</a> <span class="lnr lnr-bubble"></span></p>
                                     <ul class="social-links col-lg-12 col-md-12 col-6">
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-github"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                            <li><a href="#"><strong class="fa fa-facebook"></strong></a></li>
+                                            <li><a href="#"><strong class="fa fa-twitter"></strong></a></li>
+                                            <li><a href="#"><strong class="fa fa-github"></strong></a></li>
+                                            <li><a href="#"><strong class="fa fa-behance"></strong></a></li>
                                     </ul>																				
                                 </div>
                             </div>
@@ -146,16 +146,19 @@
                                     <h5 class="pb-50">Leave a Reply</h5>
                                     <div class="row flex-row d-flex">
                                         <div class="col-lg-4 col-md-6">
-                                            <form method="POST" id="comment-form">
-                                                {% csrf_token %}
-                                            <input id="name" name="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
-                                            <input type="hidden" id="date" name="date" class="my-2" value="Now">                                        
-                                            <input id="email" name="email" placeholder="Enter your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your email'" class="common-input mb-20 form-control" required="" type="email">
-                                        </div>
-                                        <div class="col-lg-8 col-md-6">
-                                            <textarea id="comment" class="form-control mb-10" name="comment" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
-                                            <button type="submit" class="primary-btn mt-20">Comment</button>
-                                        </form>
+                                                <form method="POST" id="comment-form">
+                                                        {% csrf_token %}
+                                                    <label for="name">Name</label>
+                                                    <input id="name" name="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
+                                                    <input type="hidden" id="date" name="date" class="my-2" value="Now">                                        
+                                                    <label for="email">Email</label>
+                                                    <input id="email" name="email" placeholder="Enter your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your email'" class="common-input mb-20 form-control" required="" type="email">
+                                                </div>
+                                                <div class="col-lg-8 col-md-6">
+                                                    <label for="comment">Comment</label>
+                                                    <textarea id="comment" class="form-control mb-10" name="comment" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
+                                                    <button type="submit" class="primary-btn mt-20">Comment</button>
+                                                </form>
                                         </div>
                                     </div>
                                 </div>    
@@ -176,10 +179,10 @@
                                     Junior Android and Web Developer
                                 </p>
                                 <ul class="social-links">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-github"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                        <li><a href="#"><strong class="fa fa-facebook"></strong></a></li>
+                                        <li><a href="#"><strong class="fa fa-twitter"></strong></a></li>
+                                        <li><a href="#"><strong class="fa fa-github"></strong></a></li>
+                                        <li><a href="#"><strong class="fa fa-behance"></strong></a></li>
                                 </ul>
                                 <p>
                                     Courteous and enthusiastic, I am interested in IT and everything in its orbit. I recently began to be fascinated by web programming, e.g. developing apps and building websites. Invited to join my friend's start-up company as a front-end developer, I gained experience of working in this area. 
@@ -209,52 +212,53 @@ As this area complements my studies, I am keen to gain more experience in the fi
         <!-- End post-content Area -->
         
         <footer class="footer-area section-gap">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5 col-md-6 col-sm-6">
-                        <div class="single-footer-widget">
-                            <h4>ISM</h4>
-                            <p>
-                                Learn new things every single day!
-                            </p>
-                            <p class="footer-text">
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> Jalil Ahmadov
-</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 col-md-6 col-sm-6">
-                        <div class="single-footer-widget">
-                            <h4>Newsletter</h4>
-                            <p>Stay updated!</p>
-                            <div class="" id="mc_embed_signup">
-                                 <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get">
-                                  <div class="input-group">
-                                    <input type="text" class="form-control" name="EMAIL" placeholder="Enter Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email Address '" required="" type="email">
-                                    <div class="input-group-btn">
-                                      <button class="btn btn-default" type="submit">
-                                        <span class="lnr lnr-arrow-right"></span>
-                                      </button>    
-                                    </div>
-                                        <div class="info"></div>  
-                                  </div>
-                                </form> 
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-6 col-sm-6">
+                            <div class="single-footer-widget">
+                                <h4>ISM</h4>
+                                <p>
+                                    Learn new things every single day!
+                                </p>
+                                <p class="footer-text">
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> Jalil Ahmadov
+    </p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-2 col-md-6 col-sm-6 social-widget">
-                        <div class="single-footer-widget">
-                            <h4>Follow Me</h4>
-                            <p>Let us be social</p>
-                            <div class="footer-social d-flex align-items-center">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                           
+                        <div class="col-lg-5 col-md-6 col-sm-6">
+                            <div class="single-footer-widget">
+                                <h4>Newsletter</h4>
+                                <p>Stay updated!</p>
+                                <div class="" id="mc_embed_signup">
+                                     <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get">
+                                        <label for="email">Email</label>
+                                      <div class="input-group">
+                                        <input id="email" type="text" class="form-control" name="EMAIL" placeholder="Enter Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email Address '" required="" type="email">
+                                        <div class="input-group-btn">
+                                          <button class="btn btn-default" type="submit">
+                                            <span class="lnr lnr-arrow-right"></span>
+                                          </button>    
+                                        </div>
+                                            <div class="info"></div>  
+                                      </div>
+                                    </form> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 col-sm-6 social-widget">
+                            <div class="single-footer-widget">
+                                <h4>Follow Me</h4>
+                                <p>Let us be social</p>
+                                <div class="footer-social d-flex align-items-center">
+                                    <a href="https://www.facebook.com/profile.php?id=100006320358619" target="_blank"><strong class="fa fa-facebook"></strong></a>
+                                    <a href="https://twitter.com/AhmadovJalil?s=08" target="_blank"><strong class="fa fa-twitter"></strong></a>
+                               
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </footer>		
+            </footer>		
 
         <script src="/static/js/jquery.min.js"></script>
 		<script src="/static/js/popper.min.js"></script>
