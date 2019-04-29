@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/fav.png">
+    <!-- Author Meta -->
+    <meta name="author" content="colorlib">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Personal</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+        <!--
+        CSS
+        ============================================= -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="/static/css/linearicons.css">
+		<link rel="stylesheet" href="/static/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/static/css/bootstrap.css">
+		<link rel="stylesheet" href="/static/css/magnific-popup.css">				
+		<link rel="stylesheet" href="/static/css/nice-select.css">							
+		<link rel="stylesheet" href="/static/css/animate.min.css">
+		<link rel="stylesheet" href="/static/css/owl.carousel.css">			
+		<link rel="stylesheet" href="/static/css/jquery-ui.css">			
+		<link rel="stylesheet" href="/static/css/main.css">
+    </head>
+    <body>	
+      <header id="header">
+        <div class="container main-menu">
+            <div class="row align-items-center justify-content-between d-flex">
+              <div id="logo">
+                <a href="{% url 'news:home' %}"><img src="/static/img/logo.jpeg" width="40px;" alt="logo" title="" /></a>
+
+              </div>
+              <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                    <li><a href="{% url 'news:home' %}">Home</a></li>
+                    <li><a href="{% url 'news:blog' %}">Blog</a></li>
+                    <li><a href="{% url 'news:faq'%}">FAQ</a></li>
+                    <li><a href="{% url 'news:contact' %}">Contact</a></li>
+                </ul>
+              </nav><!-- #nav-menu-container -->		    		
+            </div>
+        </div>
+      </header><!-- #header -->
+      
+        				  
+        
+        <!-- Start post-content Area -->
+        <section class="post-content-area single-post-area">
+            
+            <div class="container">
+                    <label class="switchSmall m5">
+							<p>Switch Theme</p>
+						<input id="theme" type="checkbox">
+						<small></small>
+						</label>	
+                <div class="row">
+                    <div class="col-lg-8 posts-list">
+                        <div class="single-post row">
+                            <div class="col-lg-12">
+                                <div class="feature-img">
+                                    <img class="img-fluid" src="/media/{{post.image}}" alt="{{post.title}}">
+                                </div>									
+                            </div>
+                            <div class="col-lg-3  col-md-3 meta-details">
+                                <ul class="tags">
+                                    <li><a href="#">Food,</a></li>
+                                    <li><a href="#">Technology,</a></li>
+                                    <li><a href="#">Politics,</a></li>
+                                    <li><a href="#">Lifestyle</a></li>
+                                </ul>
+                                <div class="user-details row">
+                                    <p class="user-name usr col-lg-12 col-md-12 col-6"><a id="th" href="#">Jalil Ahmadov</a> <span class="lnr lnr-user"></span></p>
+                                    <p class="date dt col-lg-12 col-md-12 col-6"><a id="th1" href="#">{{post.published}}</a> <span class="lnr lnr-calendar-full"></span></p>
+                                    <p class="view vw col-lg-12 col-md-12 col-6"><a id="th2" href="#">{{post.views}}</a> <span class="lnr lnr-eye"></span></p>
+                                    <p class="comments cm col-lg-12 col-md-12 col-6"><a id="th3" href="#">{{comments_count.count}} Comments</a> <span class="lnr lnr-bubble"></span></p>
+                                    <ul class="social-links col-lg-12 col-md-12 col-6">
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-github"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                    </ul>																				
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-9 col-md-9">
+                                
+                                <h3 class="mt-20 mb-20">{{post.title}}</h3> 
+
+                                <audio controls>
+                                        <source src="/media/{{post.slug}}.mp3" type="audio/mpeg">
+                                      Your browser does not support the audio element.
+                                      </audio>
+                                      
+                                <a href="{% url 'news:mp3' post.id %}" style="font-size:45px; color: rgb(151, 22, 190)"><span class="fas fa-file-audio" ></span></a>
+                                <p class="excert">
+                                {{post.description|safe}}
+                                </p>
+                            </div>
+                            
+                        </div>
+                        
+                        {% for comment in comments %}
+                            <div class="comment-list">
+                                <div class="single-comment justify-content-between d-flex">
+                                    <div class="user justify-content-between d-flex">
+                                        <div class="thumb">
+                                            <img src="/static/img/icon.png" width="25px" alt="icon">
+                                        </div>
+                                        <div class="desc ml-2" ">
+                                            <h5><a href="#">{{comment.name}}</a></h5>
+                                            <p class="date">{{comment.date}}</p>
+                                            <p class="comment">
+                                              {{comment.comment}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            {% endfor %}
+
+                            <div class="comment-list">
+                                    <div class="single-comment justify-content-between d-flex">
+                                        <div class="user justify-content-between d-flex">
+                                            <div id="thumb" class="thumb">
+                                            </div>
+                                            <div  id="recent" class="desc">
+                                               
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div> 
+                                
+                        <section class="commentform-area pt-80">
+                                <div class="container">
+                                    <h5 class="pb-50">Leave a Reply</h5>
+                                    <div class="row flex-row d-flex">
+                                        <div class="col-lg-4 col-md-6">
+                                            <form method="POST" id="comment-form">
+                                                {% csrf_token %}
+                                            <input id="name" name="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
+                                            <input type="hidden" id="date" name="date" class="my-2" value="Now">                                        
+                                            <input id="email" name="email" placeholder="Enter your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your email'" class="common-input mb-20 form-control" required="" type="email">
+                                        </div>
+                                        <div class="col-lg-8 col-md-6">
+                                            <textarea id="comment" class="form-control mb-10" name="comment" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
+                                            <button type="submit" class="primary-btn mt-20">Comment</button>
+                                        </form>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </section>
+                    </div>
+                    <div class="col-lg-4 sidebar-widgets">
+                        <div class="widget-wrap">
+                            <div class="single-sidebar-widget search-widget">
+                                <form class="search-form" action="#">
+                                    <input placeholder="Search Posts" name="search" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Posts'" >
+                                    <button type="submit"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                            <div class="single-sidebar-widget user-info-widget">
+                                <img src="/static/img/celil.jpg" alt="Jalil Ahmadov" style="width: 80px; border-radius: 50%">
+                                <a href="#"><h4>Jalil Ahmadov</h4></a>
+                                <p>
+                                    Junior Android and Web Developer
+                                </p>
+                                <ul class="social-links">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-github"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                </ul>
+                                <p>
+                                    Courteous and enthusiastic, I am interested in IT and everything in its orbit. I recently began to be fascinated by web programming, e.g. developing apps and building websites. Invited to join my friend's start-up company as a front-end developer, I gained experience of working in this area. 
+As this area complements my studies, I am keen to gain more experience in the field.
+                                </p>
+                            </div>
+                            <div class="single-sidebar-widget popular-post-widget">								
+								<div class="popular-post-list">										
+									<div class="single-sidebar-widget tag-cloud-widget">
+										<h4 class="tagcloud-title">Tag Clouds</h4>
+										<ul>
+											<li><a href="#">Technology</a></li>
+											<li><a href="#">Software</a></li>
+											<li><a href="#">Hardware</a></li>
+											<li><a href="#">Photography</a></li>
+							
+										</ul>
+									</div>		
+								</div>
+							</div>
+                            	
+                        </div>
+                    </div>
+                </div>
+            </div>	
+        </section>
+        <!-- End post-content Area -->
+        
+        <footer class="footer-area section-gap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-md-6 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h4>ISM</h4>
+                            <p>
+                                Learn new things every single day!
+                            </p>
+                            <p class="footer-text">
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Jalil Ahmadov
+</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h4>Newsletter</h4>
+                            <p>Stay updated!</p>
+                            <div class="" id="mc_embed_signup">
+                                 <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get">
+                                  <div class="input-group">
+                                    <input type="text" class="form-control" name="EMAIL" placeholder="Enter Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email Address '" required="" type="email">
+                                    <div class="input-group-btn">
+                                      <button class="btn btn-default" type="submit">
+                                        <span class="lnr lnr-arrow-right"></span>
+                                      </button>    
+                                    </div>
+                                        <div class="info"></div>  
+                                  </div>
+                                </form> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6 social-widget">
+                        <div class="single-footer-widget">
+                            <h4>Follow Me</h4>
+                            <p>Let us be social</p>
+                            <div class="footer-social d-flex align-items-center">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                           
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>		
+
+        <script src="/static/js/jquery.min.js"></script>
+		<script src="/static/js/popper.min.js"></script>
+		<script src="/static/js/vendor/bootstrap.min.js"></script>			
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>			
+		<script src="/static/js/easing.min.js"></script>			
+		<script src="/static/js/hoverIntent.js"></script>
+		<script src="/static/js/superfish.min.js"></script>	
+		<script src="/static/js/jquery.ajaxchimp.min.js"></script>
+		<script src="/static/js/jquery.magnific-popup.min.js"></script>	
+		<script src="/static/js/jquery.tabs.min.js"></script>						
+		<script src="/static/js/jquery.nice-select.min.js"></script>	
+		<script src="/static/js/isotope.pkgd.min.js"></script>			
+		<script src="/static/js/waypoints.min.js"></script>
+		<script src="/static/js/jquery.counterup.min.js"></script>
+		<script src="/static/js/simple-skillbar.js"></script>							
+		<script src="/static/js/owl.carousel.min.js"></script>							
+		<script src="/static/js/mail-script.js"></script>	
+        <script src="/static/js/main.js"></script>	
+        <script>
+        jQuery(document).on('submit', '#comment-form',function(e){
+            e.preventDefault();
+            jQuery.ajax({
+                type:'POST',
+                url:'/{{post.slug}}/',
+                data:{
+                    name:$('#name').val(),
+                    email:$('#email').val(),
+                    comment:$('#comment').val(),
+                    date:$('#date').val(),
+                    csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                    action: 'comment'
+                },
+                success:function(json){
+                   document.getElementById("comment-form").reset();
+                   console.log(json);
+                   $("#recent").prepend("<h5><a href='#'>" + json.name + "</a></h5><p class='date'>"+ json.date + "</p> <p class='comment'>" + json.comment + "</p>")
+                   $('#thumb').prepend('<img src="/static/img/icon.png" width="25px" alt="">');
+               },
+                error : function(xhr,errmsg,err) {
+               jQuery('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: "+errmsg+
+                   " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+               console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+           }
+            });
+          });
+        </script>	
+    </body>
+</html>
